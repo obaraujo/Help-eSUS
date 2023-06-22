@@ -1,0 +1,43 @@
+.x-form-invalido{
+  background:#fff url(../images/default/grid/invalid_line.gif) repeat-x bottom;
+  border:1px solid #dd7870;
+}
+
+.botaoEXT {
+  position: absolute;
+  top: 5px;
+  font-size: 13px;
+  height: 25px;
+  width: 110px;
+  border-radius: 3px;
+  cursor: pointer;
+  border: none;
+}
+
+.bCadastrar {
+  background-color: #006eff;
+  color: white;
+}
+
+.bAtualizar {
+  background-color: #ff1010;
+  color: white;
+
+}
+
+.bCadastrar:hover {
+  background-color: #006fc9;
+}
+
+.bAtualizar:hover {
+  background-color: #b90000;
+}
+
+[semPreencher] {
+  background-color: #ffa8a8;
+  text-shadow: 1px 1px 2px 2px rgb(248, 66, 66);
+}
+
+datalist {
+  font-size: 13px;
+}

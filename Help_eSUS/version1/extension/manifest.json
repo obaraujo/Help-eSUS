@@ -1,0 +1,18 @@
+{
+  "manifest_version": 2,
+  "name": "Help eSUS",
+  "version": "1.0.1",
+  "icons": {
+    "128":"assets/icon/a180x180.png"
+  },
+  "browser_action": {
+    "default_popup": "index.html"
+  },
+  "content_scripts": [
+    {
+      "matches": ["http://localhost:8090/*"],
+      "css": ["css/style.css"],
+      "js": ["js/scripts.js"]
+    }
+  ]
+}

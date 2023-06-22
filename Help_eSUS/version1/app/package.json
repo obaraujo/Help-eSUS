@@ -1,0 +1,25 @@
+{
+  "name": "help_esus",
+  "version": "1.0.1",
+  "description": "Ajuda na digitacao das fichas no eSUS",
+  "main": "n",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "author": "Vinicius Araujo",
+  "license": "ISC",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.17.1"
+  },
+  "bin": "server.js",
+  "pkg": {
+    "assets": [
+      "data/**/*"
+    ],
+    "targets": [
+      "node12"
+    ]
+  }
+}

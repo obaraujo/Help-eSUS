@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <link rel="shortcut icon" href="./icon/icon.ico" type="image/x-icon">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Help e-SUS</title>
+  <style>
+    table {
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+    th {
+      background-color: rgb(255, 34, 34);
+      color: white;
+      min-width: 200px;
+    }
+
+    td {
+      background-color: aliceblue;
+      text-align: center;
+    }
+
+    tr {
+      min-height: 30px;
+    }
+  </style>
+</head>
+
+<body>
+  <h1>Help e-SUS</h1>
+  <h2>Cadastros</h2>
+  <table id="cadastros">
+    <thead>
+      <tr>
+        <th style="min-width: 5px;">Nº</th>
+        <th>Nome</th>
+        <th>CNS</th>
+        <th>Data de nascimento</th>
+        <th>Sexo</th>
+        <th>Motivos da visita</th>
+      </tr>
+    </thead>
+    <tbody class="cadastros">
+
+    </tbody>
+  </table>
+</body>
+
+<script>
+  const url = 'http://localhost:2002/cadastros'
+  const xhttp = new XMLHttpRequest()
+  xhttp.open('GET', url, true)
+  xhttp.onreadystatechange = () => {
+    if (xhttp.status == 200 && xhttp.readyState == 4) {
+      const cadastros = JSON.parse(xhttp.responseText)
+      let num = 0
+      for (let [cns, dados] of Object.entries(cadastros)) {
+        num++
+        document.querySelector('.cadastros').innerHTML += `
+        <tr>
+          <td style="background-color: skyblue;">${num}</td>
+        <td>${dados.Nome}</td>
+        <td>${cns}</td>
+        <td>${dados.Data_de_nascimento}</td>
+        <td>${dados.Sexo}</td>
+        <td>${dados.Motivo_da_Visita}</td>
+      </tr>`
+      }
+    }
+  }
+  xhttp.send()
+</script>
+
+</html>
